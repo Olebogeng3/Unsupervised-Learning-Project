@@ -1,0 +1,392 @@
+{
+  "dashboard_name": "River Water Quality Monitoring Dashboard",
+  "version": "1.0",
+  "created_date": "2025-11-12",
+  "data_sources": {
+    "main_data": "powerbi_data/main_dashboard_data.csv",
+    "location_summary": "powerbi_data/location_summary.csv",
+    "monthly_summary": "powerbi_data/monthly_summary.csv",
+    "quality_summary": "powerbi_data/quality_category_summary.csv",
+    "kpis": "powerbi_data/kpis.csv",
+    "time_series": "powerbi_data/time_series_data.csv",
+    "correlation": "powerbi_data/correlation_matrix.csv"
+  },
+  "pages": [
+    {
+      "page_name": "Executive Summary",
+      "description": "High-level KPIs and overview",
+      "visuals": [
+        {
+          "type": "Card",
+          "title": "Total Samples",
+          "measure": "Total_Samples",
+          "source": "kpis"
+        },
+        {
+          "type": "Card",
+          "title": "WHO Compliance Rate",
+          "measure": "WHO_Compliance_Rate_Pct",
+          "source": "kpis",
+          "format": "Percentage"
+        },
+        {
+          "type": "Card",
+          "title": "Average DO",
+          "measure": "Average_DO_mg_L",
+          "source": "kpis",
+          "format": "Decimal (2)",
+          "suffix": " mg/L"
+        },
+        {
+          "type": "Card",
+          "title": "Critical Quality %",
+          "measure": "Critical_Quality_Pct",
+          "source": "kpis",
+          "format": "Percentage",
+          "alert": "Red if > 50%"
+        },
+        {
+          "type": "Donut Chart",
+          "title": "Water Quality Distribution",
+          "legend": "DO_Category",
+          "values": "DO_mg_L_count",
+          "source": "quality_summary",
+          "colors": {
+            "Adequate": "#00B050",
+            "Low": "#FFC000",
+            "Hypoxic": "#FF6600",
+            "Severely Hypoxic": "#C00000"
+          }
+        },
+        {
+          "type": "Column Chart",
+          "title": "Samples by Location",
+          "x_axis": "Sampling_Point",
+          "y_axis": "Count",
+          "source": "main_data"
+        },
+        {
+          "type": "Line Chart",
+          "title": "DO Trend Over Time",
+          "x_axis": "Date",
+          "y_axis": [
+            "DO_mg_L",
+            "DO_7day_MA"
+          ],
+          "source": "time_series",
+          "reference_line": {
+            "value": 6.0,
+            "label": "WHO Minimum",
+            "color": "Red"
+          }
+        }
+      ]
+    },
+    {
+      "page_name": "Water Quality Analysis",
+      "description": "Detailed water quality parameters",
+      "visuals": [
+        {
+          "type": "Gauge",
+          "title": "Average DO Level",
+          "value": "Average_DO_mg_L",
+          "source": "kpis",
+          "min": 0,
+          "max": 10,
+          "target": 6.0,
+          "ranges": [
+            {
+              "min": 0,
+              "max": 2,
+              "color": "Red"
+            },
+            {
+              "min": 2,
+              "max": 4,
+              "color": "Orange"
+            },
+            {
+              "min": 4,
+              "max": 6,
+              "color": "Yellow"
+            },
+            {
+              "min": 6,
+              "max": 10,
+              "color": "Green"
+            }
+          ]
+        },
+        {
+          "type": "Clustered Bar Chart",
+          "title": "DO by Sampling Location",
+          "y_axis": "Sampling_Point",
+          "x_axis": [
+            "DO_mg_L_mean",
+            "DO_mg_L_min",
+            "DO_mg_L_max"
+          ],
+          "source": "location_summary"
+        },
+        {
+          "type": "Scatter Chart",
+          "title": "Temperature vs DO Relationship",
+          "x_axis": "Sample_Temp_C",
+          "y_axis": "DO_mg_L",
+          "legend": "DO_Category",
+          "source": "main_data"
+        },
+        {
+          "type": "Matrix Heatmap",
+          "title": "Parameter Correlation Matrix",
+          "rows": "Parameter_1",
+          "columns": "Parameter_2",
+          "values": "Correlation",
+          "source": "correlation",
+          "color_scale": "Red-Yellow-Green",
+          "format": "Decimal (2)"
+        },
+        {
+          "type": "Table",
+          "title": "Location Summary Statistics",
+          "columns": [
+            "Sampling_Point",
+            "DO_mg_L_mean",
+            "pH_mean",
+            "Turbidity_NTU_mean",
+            "Compliance_Rate_Pct"
+          ],
+          "source": "location_summary"
+        }
+      ]
+    },
+    {
+      "page_name": "Temporal Trends",
+      "description": "Time-based analysis and seasonality",
+      "visuals": [
+        {
+          "type": "Line Chart",
+          "title": "DO Trend with Moving Average",
+          "x_axis": "Date",
+          "y_axis": [
+            "DO_mg_L",
+            "DO_7day_MA"
+          ],
+          "source": "time_series"
+        },
+        {
+          "type": "Area Chart",
+          "title": "Temperature Trend",
+          "x_axis": "Date",
+          "y_axis": [
+            "Sample_Temp_C",
+            "Temp_7day_MA"
+          ],
+          "source": "time_series"
+        },
+        {
+          "type": "Column Chart",
+          "title": "Monthly Average DO",
+          "x_axis": "Month_Name",
+          "y_axis": "DO_mg_L_mean",
+          "source": "monthly_summary",
+          "sort": "Month"
+        },
+        {
+          "type": "Clustered Column Chart",
+          "title": "Compliance Rate by Month",
+          "x_axis": "Month_Name",
+          "y_axis": "Compliance_Rate_Pct",
+          "source": "monthly_summary"
+        },
+        {
+          "type": "Ribbon Chart",
+          "title": "Water Quality Category Over Time",
+          "x_axis": "Date",
+          "legend": "DO_Category",
+          "y_axis": "Count",
+          "source": "main_data"
+        }
+      ]
+    },
+    {
+      "page_name": "Pollution Analysis",
+      "description": "Pollution indicators and severity",
+      "visuals": [
+        {
+          "type": "Stacked Bar Chart",
+          "title": "Pollution Severity by Location",
+          "y_axis": "Sampling_Point",
+          "legend": "Pollution_Severity",
+          "x_axis": "Count",
+          "source": "main_data"
+        },
+        {
+          "type": "Scatter Chart",
+          "title": "Turbidity vs TSS",
+          "x_axis": "Turbidity_NTU",
+          "y_axis": "TSS_mL_L",
+          "legend": "Sampling_Point",
+          "source": "main_data"
+        },
+        {
+          "type": "Line and Column Chart",
+          "title": "EC and TDS Over Time",
+          "x_axis": "Date",
+          "column_y": "EC_uS_cm",
+          "line_y": "TDS_mg_L",
+          "source": "time_series"
+        },
+        {
+          "type": "Funnel Chart",
+          "title": "Water Quality Funnel",
+          "values": [
+            {
+              "category": "Total Samples",
+              "value": "Total_Samples"
+            },
+            {
+              "category": "Non-Critical",
+              "value": "WHO_Compliant_Count"
+            },
+            {
+              "category": "Low DO",
+              "value": "calculated"
+            },
+            {
+              "category": "Adequate",
+              "value": "calculated"
+            }
+          ],
+          "source": "kpis"
+        }
+      ]
+    },
+    {
+      "page_name": "Compliance Dashboard",
+      "description": "WHO standards compliance tracking",
+      "visuals": [
+        {
+          "type": "KPI",
+          "title": "WHO Compliance Rate",
+          "value": "WHO_Compliance_Rate_Pct",
+          "goal": 95,
+          "trend_axis": "Date",
+          "source": "kpis"
+        },
+        {
+          "type": "Decomposition Tree",
+          "title": "Non-Compliance Analysis",
+          "analyze": "WHO_Compliant",
+          "explain_by": [
+            "Sampling_Point",
+            "Month_Name",
+            "DO_Category"
+          ],
+          "source": "main_data"
+        },
+        {
+          "type": "Stacked Column Chart",
+          "title": "Compliance by Location",
+          "x_axis": "Sampling_Point",
+          "legend": "WHO_Compliant",
+          "y_axis": "Count",
+          "source": "main_data"
+        },
+        {
+          "type": "Table",
+          "title": "Detailed Compliance Breakdown",
+          "columns": [
+            "Sampling_Point",
+            "DO_WHO_Compliant",
+            "pH_WHO_Compliant",
+            "Turbidity_WHO_Compliant",
+            "WHO_Compliant"
+          ],
+          "source": "main_data",
+          "conditional_formatting": {
+            "WHO_Compliant": {
+              "True": "Green",
+              "False": "Red"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "page_name": "Drill-Down Details",
+      "description": "Detailed data exploration",
+      "visuals": [
+        {
+          "type": "Table",
+          "title": "All Sample Data",
+          "columns": "All",
+          "source": "main_data",
+          "features": [
+            "Sort",
+            "Filter",
+            "Search",
+            "Export"
+          ]
+        },
+        {
+          "type": "Between",
+          "title": "Date Range",
+          "field": "Date"
+        },
+        {
+          "type": "Dropdown",
+          "title": "Sampling Location",
+          "field": "Sampling_Point"
+        },
+        {
+          "type": "List",
+          "title": "Water Quality Category",
+          "field": "DO_Category"
+        }
+      ]
+    }
+  ],
+  "color_theme": {
+    "primary": "#0078D4",
+    "secondary": "#004578",
+    "accent": "#FFC000",
+    "success": "#00B050",
+    "warning": "#FF6600",
+    "danger": "#C00000",
+    "background": "#FFFFFF",
+    "text": "#000000"
+  },
+  "measures_to_create": [
+    {
+      "name": "Total Samples",
+      "dax": "COUNTROWS('main_data')"
+    },
+    {
+      "name": "Average DO",
+      "dax": "AVERAGE('main_data'[DO_mg_L])"
+    },
+    {
+      "name": "Compliance Rate",
+      "dax": "DIVIDE(COUNTROWS(FILTER('main_data', 'main_data'[WHO_Compliant] = TRUE)), COUNTROWS('main_data'), 0) * 100"
+    },
+    {
+      "name": "Critical Samples",
+      "dax": "COUNTROWS(FILTER('main_data', 'main_data'[Overall_Quality] = \"Critical\"))"
+    },
+    {
+      "name": "WHO Target",
+      "dax": "6.0"
+    }
+  ],
+  "interactions": {
+    "cross_filtering": "Enabled",
+    "drill_through": "Enabled on all pages",
+    "bookmarks": [
+      "Critical Samples",
+      "Compliant Samples",
+      "By Location"
+    ],
+    "tooltips": "Custom tooltips enabled for all visuals"
+  }
+}
