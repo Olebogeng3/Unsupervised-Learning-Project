@@ -37,7 +37,11 @@ QUALITY_THRESHOLDS = {
 # Define valid ranges for parameters (based on water quality standards)
 PARAMETER_RANGES = {
     'pH': (6.0, 9.0),  # WHO drinking water standards
-    'DO': (4.0, 15.0),  # Dissolved Oxygen mg/L
+    'DO': (0.0, 20.0),  # Dissolved Oxygen mg/L - ADJUSTED: Natural range 0-20, includes hypoxic + supersaturated
+    # NOTE: DO < 2.0 mg/L = severely hypoxic (ecological crisis)
+    #       DO 2.0-4.0 mg/L = hypoxic (poor water quality)
+    #       DO 4.0-6.0 mg/L = low (marginal for aquatic life)
+    #       DO > 6.0 mg/L = adequate for most aquatic life
     'Turbidity': (0, 500),  # NTU
     'EC': (0, 3000),  # µS/cm
     'TDS': (0, 2000),  # mg/L

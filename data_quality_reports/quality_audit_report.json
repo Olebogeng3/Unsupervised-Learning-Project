@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-12 19:56:37",
+  "timestamp": "2025-11-12 20:02:32",
   "dataset_info": {},
   "completeness": {
     "total_records": 219,
@@ -10,17 +10,9 @@
   },
   "validity": {
     "total_values_checked": 2394,
-    "invalid_values": 193,
-    "validity_rate": 0.9194,
+    "invalid_values": 29,
+    "validity_rate": 0.9879,
     "issues": [
-      {
-        "parameter": "DO",
-        "out_of_range_count": 164,
-        "percentage": 74.89,
-        "valid_range": "4.0 - 15.0",
-        "actual_min": 0.0,
-        "actual_max": 9.12
-      },
       {
         "parameter": "Turbidity",
         "out_of_range_count": 15,
@@ -65,10 +57,10 @@
   },
   "quality_score": {
     "completeness_score": 98.4,
-    "validity_score": 91.94,
+    "validity_score": 98.79,
     "consistency_score": 100.0,
     "accuracy_score": 99.04,
-    "overall_score": 97.34,
+    "overall_score": 99.06,
     "grade": "A"
   }
 }
