@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>River Water Quality Monitoring Report</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 4px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+        }
+        h3 {
+            color: #7f8c8d;
+        }
+        .metric-card {
+            display: inline-block;
+            width: 22%;
+            margin: 1%;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .metric-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        .location-card {
+            margin: 20px 0;
+            padding: 15px;
+            border-left: 5px solid;
+            background-color: #ecf0f1;
+        }
+        .excellent { border-color: #27ae60; }
+        .good { border-color: #2ecc71; }
+        .moderate { border-color: #f39c12; }
+        .poor { border-color: #e74c3c; }
+        .critical { border-color: #c0392b; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #34495e;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .visualization {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .visualization img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .alert {
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .alert-warning {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+        .alert-info {
+            background-color: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #ecf0f1;
+            text-align: center;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌊 River Water Quality Monitoring Report</h1>
+        <p><strong>Report Date:</strong> November 12, 2025</p>
+        <p><strong>Monitoring Period:</strong> May 09, 2023 - November 28, 2023</p>
+        <p><strong>Total Samples:</strong> 219 | <strong>Sampling Locations:</strong> 5</p>
+        
+        <div class="alert alert-info">
+            <strong>Executive Summary:</strong> This report presents a comprehensive analysis of river water quality 
+            across 5 sampling locations over 7 months. 
+            Analysis reveals significant spatial variations in water quality parameters.
+        </div>
+
+        <h2>📊 Key Performance Indicators</h2>
+        <div style="text-align: center;">
+            <div class="metric-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div class="metric-label">Average WQI</div>
+                <div class="metric-value">60.1</div>
+                <div class="metric-label">out of 100</div>
+            </div>
+            <div class="metric-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <div class="metric-label">Pollution Score</div>
+                <div class="metric-value">64.8</div>
+                <div class="metric-label">average</div>
+            </div>
+            <div class="metric-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <div class="metric-label">Avg DO</div>
+                <div class="metric-value">2.6</div>
+                <div class="metric-label">mg/L</div>
+            </div>
+            <div class="metric-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                <div class="metric-label">Samples</div>
+                <div class="metric-value">219</div>
+                <div class="metric-label">total</div>
+            </div>
+        </div>
+
+        <h2>📍 Location-Specific Analysis</h2>
+        
+
+        <div class="location-card good">
+            <h3>Arroyo Salguero</h3>
+            <p><strong>Status:</strong> Good Quality | <strong>WQI:</strong> 80.8/100</p>
+            <p>
+                <strong>DO:</strong> 3.39 mg/L | 
+                <strong>pH:</strong> 7.98 | 
+                <strong>Turbidity:</strong> 13.7 NTU | 
+                <strong>Pollution Score:</strong> 56.2
+            </p>
+        </div>
+    
+        <div class="location-card moderate">
+            <h3>Arroyo_Las Torres</h3>
+            <p><strong>Status:</strong> Moderate Quality | <strong>WQI:</strong> 65.9/100</p>
+            <p>
+                <strong>DO:</strong> 3.99 mg/L | 
+                <strong>pH:</strong> 8.22 | 
+                <strong>Turbidity:</strong> 133.2 NTU | 
+                <strong>Pollution Score:</strong> 64.7
+            </p>
+        </div>
+    
+        <div class="location-card moderate">
+            <h3>Puente Irigoyen</h3>
+            <p><strong>Status:</strong> Moderate Quality | <strong>WQI:</strong> 52.9/100</p>
+            <p>
+                <strong>DO:</strong> 1.85 mg/L | 
+                <strong>pH:</strong> 8.06 | 
+                <strong>Turbidity:</strong> 80.9 NTU | 
+                <strong>Pollution Score:</strong> 66.9
+            </p>
+        </div>
+    
+        <div class="location-card moderate">
+            <h3>Puente Bilbao</h3>
+            <p><strong>Status:</strong> Moderate Quality | <strong>WQI:</strong> 52.8/100</p>
+            <p>
+                <strong>DO:</strong> 2.41 mg/L | 
+                <strong>pH:</strong> 7.93 | 
+                <strong>Turbidity:</strong> 366.6 NTU | 
+                <strong>Pollution Score:</strong> 69.3
+            </p>
+        </div>
+    
+        <div class="location-card poor">
+            <h3>Puente Falbo</h3>
+            <p><strong>Status:</strong> Poor Quality | <strong>WQI:</strong> 49.5/100</p>
+            <p>
+                <strong>DO:</strong> 1.51 mg/L | 
+                <strong>pH:</strong> 7.96 | 
+                <strong>Turbidity:</strong> 117.4 NTU | 
+                <strong>Pollution Score:</strong> 66.4
+            </p>
+        </div>
+    
+        <h2>⚠️ Critical Findings</h2>
+        
+        <div class="alert alert-danger">
+            <strong>High Priority:</strong> Puente Bilbao shows consistently poor water quality with 
+            4 critical pollution events. 
+            Immediate investigation and remediation recommended.
+        </div>
+        
+        <div class="alert alert-warning">
+            <strong>Moderate Concern:</strong> 36 instances of high turbidity (>200 NTU) 
+            detected across all locations, indicating periodic pollution events.
+        </div>
+        
+        <h2>📈 Visualizations</h2>
+        
+        <div class="visualization">
+            <h3>Executive Dashboard</h3>
+            <img src="executive_dashboard.png" alt="Executive Dashboard">
+        </div>
+        
+        <div class="visualization">
+            <h3>Temporal Analysis</h3>
+            <img src="temporal_analysis_dashboard.png" alt="Temporal Analysis">
+        </div>
+        
+        <div class="visualization">
+            <h3>Location Comparison</h3>
+            <img src="location_comparison_report.png" alt="Location Comparison">
+        </div>
+        
+        <div class="visualization">
+            <h3>Parameter Details</h3>
+            <img src="parameter_comparison_detailed.png" alt="Parameter Comparison">
+        </div>
+        
+        <div class="visualization">
+            <h3>Pollution Events</h3>
+            <img src="pollution_events_analysis.png" alt="Pollution Events">
+        </div>
+        
+        <div class="visualization">
+            <h3>Statistical Summary</h3>
+            <img src="statistical_summary_visualization.png" alt="Statistical Summary">
+        </div>
+        
+        <h2>📋 Detailed Statistics</h2>
+        <table>
+            <tr>
+                <th>Location</th>
+                <th>WQI</th>
+                <th>Pollution Score</th>
+                <th>DO (mg/L)</th>
+                <th>pH</th>
+                <th>Turbidity (NTU)</th>
+                <th>Samples</th>
+            </tr>
+
+            <tr>
+                <td>Arroyo Salguero</td>
+                <td>80.8</td>
+                <td>56.2</td>
+                <td>3.39</td>
+                <td>7.98</td>
+                <td>13.7</td>
+                <td>42</td>
+            </tr>
+    
+            <tr>
+                <td>Arroyo_Las Torres</td>
+                <td>65.9</td>
+                <td>64.7</td>
+                <td>3.99</td>
+                <td>8.22</td>
+                <td>133.2</td>
+                <td>44</td>
+            </tr>
+    
+            <tr>
+                <td>Puente Irigoyen</td>
+                <td>52.9</td>
+                <td>66.9</td>
+                <td>1.85</td>
+                <td>8.06</td>
+                <td>80.9</td>
+                <td>44</td>
+            </tr>
+    
+            <tr>
+                <td>Puente Bilbao</td>
+                <td>52.8</td>
+                <td>69.3</td>
+                <td>2.41</td>
+                <td>7.93</td>
+                <td>366.6</td>
+                <td>45</td>
+            </tr>
+    
+            <tr>
+                <td>Puente Falbo</td>
+                <td>49.5</td>
+                <td>66.4</td>
+                <td>1.51</td>
+                <td>7.96</td>
+                <td>117.4</td>
+                <td>44</td>
+            </tr>
+    
+        </table>
+        
+        <h2>💡 Recommendations</h2>
+        <ol>
+            <li><strong>Immediate Action:</strong> Investigate pollution sources at Puente Bilbao (worst water quality)</li>
+            <li><strong>Enhanced Monitoring:</strong> Increase sampling frequency during high-risk periods</li>
+            <li><strong>Pollution Control:</strong> Implement targeted measures to reduce turbidity and improve dissolved oxygen</li>
+            <li><strong>Long-term Strategy:</strong> Develop watershed management plan focusing on identified hotspots</li>
+            <li><strong>Stakeholder Engagement:</strong> Coordinate with upstream industrial/agricultural operators</li>
+        </ol>
+        
+        <h2>📊 Data Quality Notes</h2>
+        <ul>
+            <li>Total samples analyzed: 219</li>
+            <li>Sampling period: 203 days</li>
+            <li>Parameters monitored: pH, EC, TDS, TSS, DO, Turbidity, Hardness, Total Chlorine</li>
+            <li>All statistical tests performed at α = 0.05 significance level</li>
+            <li>Non-parametric methods used due to non-normal distributions</li>
+        </ul>
+        
+        <div class="footer">
+            <p><strong>River Water Quality Monitoring System</strong></p>
+            <p>Generated on November 12, 2025 at 19:20</p>
+            <p>For questions or concerns, contact the environmental monitoring team</p>
+        </div>
+    </div>
+</body>
+</html>

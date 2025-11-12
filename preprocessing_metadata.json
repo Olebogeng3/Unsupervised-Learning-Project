@@ -1,0 +1,48 @@
+{
+  "sampling_points": [
+    "Arroyo Salguero",
+    "Arroyo_Las Torres",
+    "Puente Bilbao",
+    "Puente Falbo",
+    "Puente Irigoyen"
+  ],
+  "hardness_classes": [
+    "BLANDA",
+    "SEMIDURA"
+  ],
+  "seasons": [
+    "Autumn",
+    "Spring",
+    "Summer"
+  ],
+  "feature_columns": [
+    "pH",
+    "EC",
+    "TDS",
+    "TSS",
+    "DO",
+    "Turbidity",
+    "Hardness",
+    "Total_Chlorine",
+    "Ambient_Temp",
+    "Ambient_Humidity",
+    "Sample_Temp",
+    "Temp_Difference",
+    "DO_Index",
+    "pH_Deviation",
+    "EC_TDS_Ratio",
+    "Pollution_Score",
+    "Sampling_Point_Encoded",
+    "Month",
+    "Season_Encoded",
+    "Time_Minutes"
+  ],
+  "original_shape": [
+    219,
+    30
+  ],
+  "feature_matrix_shape": [
+    219,
+    20
+  ]
+}

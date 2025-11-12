@@ -1,0 +1,55 @@
+
+================================================================================
+STATISTICAL ANALYSIS SUMMARY REPORT
+River Water Quality Dataset
+================================================================================
+
+1. DATASET OVERVIEW
+   • Total Samples: 219
+   • Sampling Points: 5
+   • Time Period: 2023-05-09 to 2023-11-28
+   • Parameters Analyzed: 8
+
+2. NORMALITY ASSESSMENT
+   • Normally Distributed: 0 / 8 parameters
+   • Non-Normal Parameters: pH, EC, TDS, TSS, DO, Turbidity, Hardness, Total_Chlorine
+   
+3. VARIABILITY ANALYSIS
+   • High Variability (CV > 50%): 3 parameters
+   • Most Variable: Turbidity (CV=162.0%)
+   • Least Variable: pH (CV=3.6%)
+
+4. CORRELATION FINDINGS
+   • Strong Correlations Found: 3
+   • Strongest Positive: EC ↔ TDS (expected)
+   
+5. LOCATION DIFFERENCES
+   • Significant Differences Found: 8 / 8 parameters
+   • Parameters with location effect: pH, EC, TDS, TSS, DO, Turbidity, Hardness, Total_Chlorine
+
+6. TEMPORAL PATTERNS
+   • Seasonal Differences: 6 / 8 parameters
+   • Months Covered: 7
+
+7. POLLUTION ASSESSMENT
+   • Mean Pollution Score: 64.80 ± 9.18
+   • Most Polluted Location: Puente Bilbao (69.30)
+   • Cleanest Location: Arroyo Salguero (56.22)
+
+8. WATER QUALITY INDEX (WQI)
+   • Mean WQI: 60.15 / 100
+   • Excellent Quality Samples: 6 (2.7%)
+   • Poor/Very Poor Samples: 69 (31.5%)
+
+9. OUTLIER SUMMARY
+   • Total Outliers (Z>3): 21
+   • Parameter with Most Outliers: Turbidity
+
+10. KEY FINDINGS
+    • Turbidity shows highest variability and most outliers (pollution events)
+    • Significant differences found between sampling locations
+    • EC and TDS are highly correlated (expected relationship)
+    • Puente Bilbao consistently shows poorest water quality
+    • Arroyo Salguero shows best overall water quality
+
+================================================================================

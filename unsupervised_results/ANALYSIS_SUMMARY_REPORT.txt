@@ -1,0 +1,92 @@
+================================================================================
+UNSUPERVISED LEARNING ANALYSIS - SUMMARY REPORT
+================================================================================
+
+DATASET INFORMATION
+--------------------------------------------------------------------------------
+Total Samples: 219
+Features Used: 27
+Locations: 5
+
+CLUSTERING RESULTS
+--------------------------------------------------------------------------------
+
+1. K-MEANS CLUSTERING
+   Optimal K: 3
+   Silhouette Score: 0.659
+   Davies-Bouldin Index: 0.609
+   Calinski-Harabasz Index: 109.430
+
+   Cluster Distribution:
+   - Cluster 0: 206 samples (94.1%) | Avg WQI: 74.81
+   - Cluster 1: 12 samples (5.5%) | Avg WQI: 47.53
+   - Cluster 2: 1 samples (0.5%) | Avg WQI: 68.34
+
+2. HIERARCHICAL CLUSTERING
+   Linkage Method: Ward
+   Silhouette Score: 0.646
+
+3. DBSCAN CLUSTERING
+   Optimal eps: 1.5
+   Clusters Found: 2
+   Noise Points: 203 (92.7%)
+
+DIMENSIONALITY REDUCTION
+--------------------------------------------------------------------------------
+PCA Components for 90% Variance: 7
+Total Variance Explained: 0.919
+
+Top 3 PC Variance:
+   PC1: 0.419 (41.9%)
+   PC2: 0.211 (21.1%)
+   PC3: 0.084 (8.4%)
+
+ANOMALY DETECTION
+--------------------------------------------------------------------------------
+Algorithm: Isolation Forest
+Anomalies Detected: 22 (10.0%)
+
+Anomalies by Location:
+   - Puente Bilbao: 26.7%
+   - Arroyo Salguero: 11.9%
+   - Puente Falbo: 9.1%
+   - Arroyo_Las Torres: 2.3%
+   - Puente Irigoyen: 0.0%
+
+KEY INSIGHTS
+--------------------------------------------------------------------------------
+
+Cluster 0: Good Water Quality
+   - Average WQI: 74.81
+   - Average Pollution Risk: 2.93
+   - Dominant Location: Arroyo_Las Torres
+   - Sample Count: 206
+
+Cluster 1: Poor Water Quality
+   - Average WQI: 47.53
+   - Average Pollution Risk: 5.17
+   - Dominant Location: Puente Bilbao
+   - Sample Count: 12
+
+Cluster 2: Moderate Water Quality
+   - Average WQI: 68.34
+   - Average Pollution Risk: 0.00
+   - Dominant Location: Arroyo Salguero
+   - Sample Count: 1
+
+FILES GENERATED
+--------------------------------------------------------------------------------
+   1. 01_optimal_k_selection.png - Elbow and Silhouette plots
+   2. 02_hierarchical_dendrogram.png - Hierarchical clustering tree
+   3. 03_pca_variance_explained.png - PCA scree and cumulative variance
+   4. 04_clustering_comparison_pca.png - All algorithms in PCA space
+   5. 05_kmeans_cluster_profiles.png - Cluster characteristics heatmap
+   6. 06_location_analysis.png - Location-based clustering insights
+   7. clustered_data_complete.csv - Full dataset with cluster labels
+   8. kmeans_cluster_profiles.csv - Average features per cluster
+   9. pca_top_features.csv - Most important features per PC
+  10. clustering_metrics_summary.csv - Performance metrics
+
+================================================================================
+ANALYSIS COMPLETE
+================================================================================
