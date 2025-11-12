@@ -1,0 +1,114 @@
+
+================================================================================
+STATISTICAL AND PREDICTIVE ANALYSIS - SUMMARY REPORT
+================================================================================
+
+Dataset: River Water Quality Parameters
+Analysis Date: 2025-11-12 20:08:58
+Total Samples: 219
+Total Features: 25
+
+================================================================================
+1. DESCRIPTIVE STATISTICS
+================================================================================
+
+Key Water Quality Parameters:
+- DO (Dissolved Oxygen): 2.62 ± 1.96 mg/L
+- pH: 8.03 ± 0.29
+- Turbidity: 144.56 ± 234.12 NTU
+- Temperature: 19.59 ± 3.88 °C
+
+Variability Analysis (Coefficient of Variation):
+Temp_Difference    223.510436
+Turbidity          161.952881
+TSS                141.617182
+Season_Encoded     100.917431
+DO                  74.695879
+
+================================================================================
+2. NORMALITY ASSESSMENT
+================================================================================
+
+Variables following normal distribution (Shapiro-Wilk test, p > 0.05):
+1 out of 25 variables
+
+Variables requiring non-parametric methods:
+24 variables
+
+================================================================================
+3. CORRELATION ANALYSIS
+================================================================================
+
+Strong correlations detected: 8
+
+Top correlations saved in: correlation_heatmaps.png
+
+================================================================================
+4. PREDICTIVE MODELING RESULTS
+================================================================================
+
+REGRESSION (Predicting DO levels):
+Best Model: Linear Regression
+  - R² Score: 1.0000
+  - RMSE: 0.0000
+  - MAE: 0.0000
+
+CLASSIFICATION (Water Quality Categories):
+Best Model: Random Forest
+  - Accuracy: 1.0000
+  - CV Accuracy: 0.9543
+
+================================================================================
+5. FEATURE IMPORTANCE
+================================================================================
+
+Top 5 Most Important Features for DO Prediction:
+        Feature  Importance
+       DO_Index    0.923731
+    Sample_Temp    0.011548
+Pollution_Score    0.009550
+       Hardness    0.005996
+             EC    0.005055
+
+================================================================================
+FILES GENERATED
+================================================================================
+
+Statistical Analysis:
+✓ descriptive_statistics.csv
+✓ normality_tests.csv
+✓ pearson_correlation.csv
+✓ spearman_correlation.csv
+✓ correlation_heatmaps.png
+✓ group_comparison_tests.csv
+
+Predictive Modeling:
+✓ regression_results.csv
+✓ regression_model_comparison.png
+✓ classification_results.csv
+✓ feature_importance.csv
+✓ feature_importance.png
+
+================================================================================
+RECOMMENDATIONS
+================================================================================
+
+1. Model Selection:
+   - For DO prediction: Use Linear Regression (R² = 1.0000)
+   - For quality classification: Use Random Forest (Acc = 1.0000)
+
+2. Key Predictors:
+   - Focus on top 5 features: DO_Index, Sample_Temp, Pollution_Score, Hardness, EC
+
+3. Statistical Considerations:
+   - 24 variables are non-normal
+   - Use non-parametric methods for these variables
+
+4. Future Work:
+   - Collect more samples to improve model accuracy
+   - Consider temporal patterns (seasonal effects)
+   - Explore interaction effects between parameters
+
+================================================================================
+END OF REPORT
+================================================================================
