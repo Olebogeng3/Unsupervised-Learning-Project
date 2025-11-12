@@ -1,0 +1,74 @@
+{
+  "timestamp": "2025-11-12 19:56:37",
+  "dataset_info": {},
+  "completeness": {
+    "total_records": 219,
+    "total_fields": 16,
+    "missing_cells": 56,
+    "completeness_rate": 0.984,
+    "status": "PASS"
+  },
+  "validity": {
+    "total_values_checked": 2394,
+    "invalid_values": 193,
+    "validity_rate": 0.9194,
+    "issues": [
+      {
+        "parameter": "DO",
+        "out_of_range_count": 164,
+        "percentage": 74.89,
+        "valid_range": "4.0 - 15.0",
+        "actual_min": 0.0,
+        "actual_max": 9.12
+      },
+      {
+        "parameter": "Turbidity",
+        "out_of_range_count": 15,
+        "percentage": 6.88,
+        "valid_range": "0 - 500",
+        "actual_min": 1.06,
+        "actual_max": 1000.0
+      },
+      {
+        "parameter": "TSS",
+        "out_of_range_count": 14,
+        "percentage": 6.57,
+        "valid_range": "0 - 100",
+        "actual_min": 0.1,
+        "actual_max": 650.0
+      }
+    ],
+    "status": "PASS"
+  },
+  "consistency": {
+    "issues_found": 0,
+    "issues": [],
+    "duplicate_records": 0,
+    "consistency_rate": 1.0,
+    "status": "PASS"
+  },
+  "accuracy": {
+    "total_values": 2394,
+    "outliers_detected": 23,
+    "outlier_rate": 0.0096,
+    "status": "PASS"
+  },
+  "timeliness": {
+    "start_date": "2023-05-09",
+    "end_date": "2023-11-28",
+    "total_days": 203,
+    "unique_dates": 23,
+    "max_gap_days": 36,
+    "avg_gap_days": 0.93,
+    "large_gaps_count": 4,
+    "status": "PASS"
+  },
+  "quality_score": {
+    "completeness_score": 98.4,
+    "validity_score": 91.94,
+    "consistency_score": 100.0,
+    "accuracy_score": 99.04,
+    "overall_score": 97.34,
+    "grade": "A"
+  }
+}

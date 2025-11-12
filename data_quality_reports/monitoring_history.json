@@ -1,0 +1,19 @@
+[
+  {
+    "timestamp": "2025-11-12T19:57:19.485378",
+    "filepath": "c:\\Users\\Millpark\\Downloads\\River water parameters.csv",
+    "checks": {
+      "completeness": 0.9840182648401826,
+      "volume": 219,
+      "duplicates": 0.0,
+      "freshness_days": 764
+    },
+    "alerts": [
+      {
+        "timestamp": "2025-11-12T19:57:19.493154",
+        "level": "WARNING",
+        "message": "Data is 764 days old (threshold: 7 days)"
+      }
+    ]
+  }
+]

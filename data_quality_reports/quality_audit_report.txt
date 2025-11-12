@@ -1,0 +1,77 @@
+================================================================================
+DATA QUALITY AUDIT REPORT
+================================================================================
+
+Generated: 2025-11-12 19:56:37
+Dataset: River Water Quality Parameters
+Records: 219
+Columns: 16
+
+================================================================================
+OVERALL QUALITY SCORE
+================================================================================
+
+Overall Score: 97.34/100
+Grade: A
+
+Dimension Scores:
+  Completeness   :  98.40% ✓ PASS
+  Validity       :  91.94% ✓ PASS
+  Consistency    : 100.00% ✓ PASS
+  Accuracy       :  99.04% ✓ PASS
+
+================================================================================
+DETAILED FINDINGS
+================================================================================
+
+1. COMPLETENESS
+   Completeness Rate: 98.40%
+   Missing Cells: 56
+   Status: PASS
+
+   Columns with Missing Data:
+   - Level (cm): 39 (17.81%)
+   - TSS
+(mL sed/L): 6 (2.74%)
+   - Total Cl-
+(mg Cl-/L): 6 (2.74%)
+   - Hardness
+(mg CaCO3/L): 2 (0.91%)
+   - Hardness classification: 2 (0.91%)
+   - Turbidity (NTU): 1 (0.46%)
+
+2. VALIDITY
+   Validity Rate: 91.94%
+   Invalid Values: 193
+   Status: PASS
+
+   Out-of-Range Values:
+   - DO: 164 values (74.89%) outside 4.0 - 15.0
+   - Turbidity: 15 values (6.88%) outside 0 - 500
+   - TSS: 14 values (6.57%) outside 0 - 100
+
+3. CONSISTENCY
+   Issues Found: 0
+   Status: PASS
+
+4. ACCURACY
+   Statistical Outliers: 23 (0.96%)
+   Status: PASS
+
+5. TIMELINESS
+   Date Range: 2023-05-09 to 2023-11-28
+   Total Days: 203
+   Unique Dates: 23
+   Max Gap: 36 days
+   Large Gaps: 4
+   Status: PASS
+
+================================================================================
+RECOMMENDATIONS
+================================================================================
+- Review data collection procedures to reduce out-of-range values
+- Establish more consistent sampling schedule to reduce data gaps
+
+================================================================================
+END OF REPORT
+================================================================================
